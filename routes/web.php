@@ -43,11 +43,12 @@
 
 /*
     |--------------------------------------------------------------------------
-    | Start Index Routes
+    | Start Traking data Routes
     |--------------------------------------------------------------------------
 */
 
     Route::get('/trakingcode-info', ['uses' => 'Trakingcode\TrakingcodeController@Trakingcode_Submited']);
+    Route::get('/traking-info', ['uses' => 'Trakingcode\TrakingcodeController@Traking_Daily_Data']);
 
 /*
     |--------------------------------------------------------------------------
