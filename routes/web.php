@@ -15,7 +15,7 @@
     | Start Url pass dyanemic value golble dife  Routes
     |--------------------------------------------------------------------------
 */
-    $router->pattern('section', '[a-zA-Z-]+');
+    $router->pattern('trakingcode', '[a-zA-Z-]+');
     $router->pattern('id', '[0-9]+');
     $router->pattern('title', '[a-zA-Z0-9-]+');
     $router->pattern('name', '[a-zA-Z0-9-]+');
@@ -31,9 +31,11 @@
     |--------------------------------------------------------------------------
 */
 
-    Route::get('/', function () {
-            return view('trakingform.trakingform');
-        });
+    //Route::get('/', function () {
+            //return view('trakingform.trakingform');
+        //});
+
+    Route::get('/', ['uses' => 'Trakingcode\TrakingcodeController@Trakingcode_view']);
 
 /*
     |--------------------------------------------------------------------------
@@ -48,7 +50,7 @@
 */
 
     Route::get('/trakingcode-info', ['uses' => 'Trakingcode\TrakingcodeController@Trakingcode_Submited']);
-    Route::get('/traking-info', ['uses' => 'Trakingcode\TrakingcodeController@Traking_Daily_Data']);
+    Route::get('/traking-info-{trakingcode}_{id}', ['uses' => 'Trakingcode\TrakingcodeController@Traking_Daily_Data']);
 
 /*
     |--------------------------------------------------------------------------
